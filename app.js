@@ -146,8 +146,8 @@ foMinutes.addEventListener('click', function () {
   let temps = departMinutes * 60
   const timerElement = document.getElementById("Time")
   let ladate = new Date();
-  let finheure = `${ladate.getHours() + Math.floor(temps / 3600)}:${ladate.getMinutes() + Math.floor(temps / 60 % 60)}:${ladate.getSeconds() + Math.floor(temps % 60)}`
-  document.getElementById("span").innerHTML = finheure;
+  let heure = `${ladate.getHours() + Math.floor(temps / 3600)}:${ladate.getMinutes() + Math.floor(temps / 60 % 60)}:${ladate.getSeconds() + Math.floor(temps % 60)}`
+  document.getElementById("span").innerHTML = heure;
   endTime = setInterval(() => {
     // if (temps <= -1 || temps === -1) {
     //   Divcontuetout.style.display = "none"
@@ -170,11 +170,11 @@ foMinutes.addEventListener('click', function () {
 inputForm.addEventListener('submit', (event) => {
   event.preventDefault()
   Divcontuetout.style.display = "block"
-  const departinput = linput.value
-  let temps = departinput * 60
+  const departinput = linput.value;
+  let temps = departinput * 60;
   let date = new Date();
   let dates = `${date.getHours() + Math.floor(temps / 3600)}:${date.getMinutes() + Math.floor(temps / 60 % 60)}:${date.getSeconds() + Math.floor(temps % 60)}`
-  document.getElementById("span").innerHTML = dates
+  document.getElementById("span").innerHTML = dates;
   console.log(dates);
   if (endTime = ! null) {
     clearInterval(endTime)
@@ -202,5 +202,5 @@ function Indicateur(secondes) {
   minutes = Math.floor(secondes / 60 % 60);
   seconde = Math.floor(secondes % 60);
   timerElement.innerText = `${heure < 10 ? "0" : ""}${heure}:${minutes < 10 ? "0" : ""}${minutes}:${seconde < 10 ? "0" : ""}${seconde}`
-
+  console.log(timerElement);
 }
